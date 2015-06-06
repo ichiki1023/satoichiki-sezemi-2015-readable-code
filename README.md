@@ -112,3 +112,5 @@ $ php recipe.php recipe-data.txt
 3: 杏仁豆腐
 ```
 
+##仕様7
+仕様6とかわらず

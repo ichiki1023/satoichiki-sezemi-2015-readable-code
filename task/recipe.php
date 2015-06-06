@@ -1,16 +1,16 @@
 <?php
 	$recipe_array = array();
 	$file_path = $argv[1];
+	$count_id = 1; //idを割り振るためのカウント
 
 	$file = fopen($file_path, "r");
 
 	/*1行ずつファイルを読み込み出力する*/
 	if($file){
-		$count_id = 0; //idを割り振るためのカウント
 		while($line = fgets($file)){
 			// レシピにIDを付与する
-			$count_id++;
 			$recipe_array[$count_id] = $count_id.": ".$line;
+			$count_id++;
 		}
 	}
 	fclose($file);
