@@ -44,3 +44,21 @@ while($line = fgets($file)){
 
 ### この書き方の一言説明
 可読性の向上
+
+##仕様6
+### 実際のコード
+https://github.com/Asuforce/satoichiki-sezemi-2015-readable-code/blob/d172f33b2dd495b380d334c385d62120ed29a9ac/task/recipe.php
+
+```php
+while($line = fgets($file)){
+    // レシピにIDを付与する
+    $count_id++;
+    $recipe_array[$count_id] = $count_id.": ".$line;
+}
+```
+
+### どうしてリーダブルだと思っているかの説明
+適切な名前の配列に入れることで、次の処理で何を出力しているのかがわかりやすくなると思います。
+
+### この書き方の一言説明
+適切な命名

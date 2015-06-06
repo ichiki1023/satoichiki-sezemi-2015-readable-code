@@ -15,7 +15,7 @@
 	}
 	fclose($file);
 
-	$recipe_num = $argv[2];
+	$recipe_num = $argv[2]; // 入力されたレシピID
 
 	// IDが指定されているかチェックする。
 	if(isset($recipe_num)) {
