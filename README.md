@@ -70,3 +70,44 @@ $ php recipe.php recipe-data.txt
 2: 親子丼
 3: 杏仁豆腐
 ```
+
+##仕様6
+IDを指定したレシピを出力する
+
+IDを割り振った配列を作成する。
+```
+    while($line = fgets($file)){
+        // レシピにIDを付与する
+        $count_id++;
+        $recipe_array[$count_id] = $count_id.": ".$line;
+    }
+```
+
+IDが指定されている場合とそうでない場合の表示を切り替える
+```
+    // IDが指定されているかチェックする。
+    if(isset($recipe_num)) {
+        // IDが指定されている場合
+        echo $recipe_array[$recipe_num]."\n";
+    } else {
+        // IDが指定されていない場合はレシピを全表示する
+        for ($i = 1; $i <= count($recipe_array); $i++) {
+            echo $recipe_array[$i];
+        }
+        echo "\n";
+    }
+```
+
+実行例1:
+```
+$ php recipe.php recipe-data.txt 2
+2: 親子丼
+```
+
+実行例2:
+```
+$ php recipe.php recipe-data.txt
+1: オムライス
+2: 親子丼
+3: 杏仁豆腐
+```
