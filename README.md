@@ -48,3 +48,25 @@ $ cat recipe-data.txt
 ```
 $ php recipe.php recipe-data.txt
 ```
+
+##仕様5
+レシピにIDを割り振る
+  
+データファイルは仕様4と変更なし
+  
+IDを割り振るためのカウントを用意
+```
+	$count_id = 0; //idを割り振るためのカウント
+	while($line = fgets($file)){
+		$count_id++;
+		echo $count_id.": ".$line;
+	}
+```
+
+実行例:
+```
+$ php recipe.php recipe-data.txt
+1: オムライス
+2: 親子丼
+3: 杏仁豆腐
+```
