@@ -1,19 +1,21 @@
 <?php
 	class Recipe {
-		public $params;
+		public $params = array();
 
 		public function printRecipe($argv) {
 			$this->params = $argv;
 			$recipe_array = $this->addRecipeID();
-			$recipe_num = $this->params[2]; // 入力されたレシピID
+
 			// IDが指定されているかチェックする。
-			if(isset($recipe_num)) {
+			if(isset($this->params[2])){
+				$recipe_num = $this->params[2];
+
 				// IDが指定されている場合
 				echo $recipe_array[$recipe_num];
-			} else {
+			}else{
 				// IDが指定されていない場合はレシピを全表示する
-				for ($i = 1; $i <= count($recipe_array); $i++) {
-					echo $recipe_array[$i];
+				foreach ($recipe_array as $recipe_name) {
+					echo $recipe_name;
 				}
 				echo "\n";
 			}
